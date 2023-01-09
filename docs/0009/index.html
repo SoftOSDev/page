@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link href="../../picture/favoricon.ico" rel="shortcut icon">
+<title>Xihao of the page</title>
+<style> 
+#next{
+	float:right;
+}
+#before{
+	float:left;
+}
+#text-body{
+	text-align:center;
+	color:black;
+}
+.button{
+	background-color: #4CAF50;
+	border: none;color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.button1 {
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+.button1:hover{
+	background-color: #4CAF50;
+	color: white;
+}
+.button1 {
+	border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="../../resource/main.css" title="style">
+<div class="header">
+<h2>Documentation</h2>
+</div>
+<div class="topnav">
+<a href="../download/">下载</a>
+<a href="https://blog.csdn.net">博客</a>
+<a href="../docs/">文档</a>
+<a href="../special/">专题</a>
+<a href="../music/">音乐</a>
+<a href="../chromedino/">chrome恐龙</a></div>
+<br><br>
+<div id="before">
+<a href="../0006/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#a1a1a1"><上一章</font></a>
+</div>
+<div id="next">
+<a href="../0008/"><font color="#a1a1a1">下一章></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div>
+<br><br>
+<div id="text-body">
+<h3><font color="black">C++ 常量</font></h3>
+常量是固定值，在程序执行期间不会改变。这些固定的值，又叫做<b>字面量</b>。<br>
+常量可以是任何的基本数据类型，可分为整型数字、浮点数字、字符、字符串和布尔值。<br>
+常量就像是常规的变量，只不过常量的值在定义后不能进行修改。<br><br>
+<h3><font color="black">整数常量</font></h3>
+整数常量可以是十进制、八进制或十六进制的常量。<br>
+前缀指定基数：0x 或 0X 表示十六进制，0 表示八进制，不带前缀则默认表示十进制。<br>
+整数常量也可以带一个后缀，后缀是 U 和 L 的组合，U 表示无符号整数（unsigned），L 表示长整数（long）。<br>
+后缀可以是大写，也可以是小写，U 和 L 的顺序任意。<br>
+下面列举几个整数常量的实例：<br><br>
+<img src="../../picture/int_const_demo.jpg" />
+<br>以下是各种类型的整数常量的实例：<br><br>
+<img src="../../picture/int_const.jpg" /><br><br>
+<h3><font color="black">浮点常量</font></h3>
+浮点常量由整数部分、小数点、小数部分和指数部分组成。<br>
+您可以使用小数形式或者指数形式来表示浮点常量。<br>
+当使用小数形式表示时，必须包含整数部分、小数部分，或同时包含两者。<br>
+当使用指数形式表示时， 必须包含小数点、指数，或同时包含两者。<br>
+带符号的指数是用 e 或 E 引入的。<br>
+下面列举几个浮点常量的实例：<br><br>
+<img src="../../picture/double&float_const.jpg" /><br><br>
+<h3><font color="black">布尔常量</font></h3>
+<b>true</b> 值代表真。<br>
+<b>false</b> 值代表假。<br>
+我们不应把 true 的值看成 1，把 false 的值看成 0。<br><br>
+<h3><font color="black">字符常量</font></h3>
+字符常量是括在单引号中。如果常量以 L（仅当大写时）开头，则表示它是一个宽字符常量（例如 L'x'），此时它必须存储在 <b>wchar_t</b> 类型的变量中。<br>
+否则，它就是一个窄字符常量（例如 'x'），此时它可以存储在 <b>char</b> 类型的简单变量中。<br>
+字符常量可以是一个普通的字符（例如 'x'）、一个转义序列（例如 '\t'），或一个通用的字符（例如 '\u02C0'）。<br>
+在 C++ 中，有一些特定的字符，当它们前面有反斜杠时，它们就具有特殊的含义，被用来表示如换行符（\n）或制表符（\t）等。<br>
+下表列出了一些这样的转义序列码：<br><br>
+<img src="../../picture/char_const_table.jpg" />
+<br>下面的实例显示了一些转义序列字符：<br><br>
+<img src="../../picture/char_const_demo.jpg" />
+<br>当上面的代码被编译和执行时，它会产生下列结果：<br><br>
+<img src="../../picture/out_char_const_demo.jpg" /><br><br>
+<h3><font color="black">字符串常量</font></h3>
+字符串字面值或常量是括在双引号 <b>""</b> 中的。<br>
+一个字符串包含类似于字符常量的字符：普通的字符、转义序列和通用的字符。<br>
+您可以使用 <b>\</b> 做分隔符，把一个很长的字符串常量进行分行。<br>
+下面的实例显示了一些字符串常量：<br><br>
+<img src="../../picture/char_long_const_demo.jpg" /><br><br>
+<img src="../../picture/out_char_long_const_demo.jpg" /><br><br>
+<h3><font color="black">定义常量</font></h3>
+在 C++ 中，有两种简单的定义常量的方式：<br>
+使用 <b>#define</b> 预处理器。<br>
+使用 <b>const</b> 关键字。<br><br>
+<h3><font color="black">#define 预处理器</font></h3>
+下面是使用 <b>#define</b> 预处理器定义常量的形式：<br><br>
+<img src="../../picture/define_types.jpg" />
+<br>具体请看下面的实例：<br><br>
+<img src="../../picture/define_demo.jpg" />
+<br>当上面的代码被编译和执行时，它会产生下列结果：<br><br>
+<img src="../../picture/out_const&define_demo.jpg" /><br><br>
+<h3><font color="black">const 关键字</font></h3>
+您可以使用 <b>const</b> 前缀声明指定类型的常量，如下所示：<br><br>
+<img src="../../picture/const_types.jpg" />
+<br>具体请看下面的实例：<br><br>
+<img src="../../picture/const_demo.jpg" />
+<br>当上面的代码被编译和执行时，它会产生下列结果：<br><br>
+<img src="../../picture/out_const&define_demo.jpg" />
+<br>请注意，把常量定义为大写字母形式，是一个很好的编程实践。
+</div>
+<div class='container'></div>
+<div class="footer">
+<a href="https://github.com/SoftOSDev"><img src="https://github.githubassets.com/pinned-octocat.svg"  alt="Github" width="50" height="50" /> </a><a href="https://facebook.com/SoftOSDev"><img src="https://i1.wp.com/christcentergj.com/wp-content/uploads/2015/04/facebook-logo-png.png?ssl=1"  alt="Facebook" width="50" height="50" /> </a><a href="https://twitter.com/hxh7197"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3f7189662f19f8318fc75252deee723a?rik=Qa956Np1tp8Zcg&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f06%2fTwitter-Logo.png&ehk=6ekNd2ZmhpvFDGRZF19QcumP9fb8pZRkwrbFbK%2bpULA%3d&risl=&pid=ImgRaw&r=0"  alt="Twitter" width="50" height="50" /> </a></h3>
+<a href="https://handing.eu.org"><p><font color="blue">Copyright &#169 2022-2023 Handing Co.,lnc</p></a>
+</div>
+</body>
+</html>
