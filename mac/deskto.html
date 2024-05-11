@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>macOS</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="images/AppleID 2.png">
+</head>
+
+<body id="body">
+    <footer id="dock">
+        <div class="icns" id="icns">
+            <img src="./images/Finder 2.png" alt="访达" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 104.png" alt="启动台" onclick="OpenApp(this)" />
+            <img src="./images/safari-14-96x96_2x.png" alt="Safari浏览器" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 106.png" alt="信息" onclick="OpenApp(this)" />
+            <img src="./images/ApplicationIcon 2.png" alt="邮件" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 110.png" alt="地图" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 107.png" alt="照片" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 112.png" alt="FaceTime通话" onclick="OpenApp(this)" />
+            <img src="./images/App 2.png" alt="日历" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 103.png" alt="提醒事项" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 139.png" alt="备忘录" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon.png" alt="无边记" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 132.png" alt="MC" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 145.png" alt="植物大战僵尸" onclick="gomc()" />
+            <img src="./images/AppIcon 133.png" alt="播客" onclick="OpenApp(this)" />
+            <img src="./images/AppIcon 102.png" alt="App Store" onclick="OpenApp(this)" />
+            <img src="./images/SystemPrefApp 2.png" alt="系统设置" onclick="OpenApp(this)" />
+        </div>
+    </footer>
+    <header id="topbar">
+        <section id="menu">
+            <img src="./images/AppleInternalIcon 2.png" style="width: auto; height: 80%; margin-left: 0.8%;"
+                onclick="Show_AppleMenu()" />
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu1">访达</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu2">文件</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu3">编辑</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu4">显示</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu5">前往</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu6">窗口</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-left: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="menu7">帮助</h4>
+        </section>
+        <section id="status">
+            <h4 style="margin: 0; margin-top: 2px; margin-right: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="Time">00:00</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-right: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="Zhou">周六</h4>
+            <h4 style="margin: 0; margin-top: 2px; margin-right: 2%; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);"
+                id="Date">4月22日</h4>
+        </section>
+    </header>
+    <div id="apple-menu">
+        <div class="h4-div" id="h4-div">
+            <h4 id="control1" onclick="AboutHardWare()" style="margin: 0;"> 关于本机</h4>
+            <h4 id="control2" onclick="OpenMenu(this)" style="margin: 0; margin-top: 4px;"> 系统设置...</h4>
+            <h4 id="control3" onclick="OpenMenu(this)" style="margin: 0; margin-top: 4px;"> App Store</h4>
+            <h4 id="control4" onclick="OpenMenu(this)" style="margin: 0; margin-top: 4px;"> 最近使用的项目</h4>
+            <h4 id="control5" onclick="OpenMenu(this)" style="margin: 0; margin-top: 4px;"> 强制退出</h4>
+            <h4 id="control6" onclick="Sleep()" style="margin: 0; margin-top: 4px;"> 睡眠</h4>
+            <h4 id="control7" onclick="Reset()" style="margin: 0; margin-top: 4px;"> 重新启动</h4>
+            <h4 id="control8" onclick="Shutdown()" style="margin: 0; margin-top: 4px;"> 关机</h4>
+            <h4 id="control9" onclick="BackLogon()" style="margin: 0; margin-top: 4px;"> 锁定屏幕</h4>
+            <h4 id="control10" onclick="BackLogon()" style="margin: 0; margin-top: 4px;"> 退出登录 “User”...</h4>
+        </div>
+    </div>
+    <div id="hardware">
+        <div id="win-tool">
+            <div id="exit" onclick='hardware.style.opacity = 0'></div>
+            <div id="none"></div>
+            <div id="none"></div>
+        </div>
+        <img src="./images/com.apple.macpro-2019 2.png" alt="macpro-2019" />
+        <h2>Mac Pro</h2>
+        <h5 style="margin-top: 20px; color: rgba(0, 0, 0, 0.7);" class="year">2019</h5>
+        <h5 style="top: 55%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 50px)">处理器</h5>
+        <h5 style="top: 55%; color: rgba(0, 0, 0, 0.8);">2.5GHz 二十八核Intel Xeon W</h5>
+        <h5 style="top: 59%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 50px)">图形卡</h5>
+        <h5 style="top: 59%; color: rgba(0, 0, 0, 0.8);">AMD Radeon Pro W6600X</h5>
+        <h5 style="top: 63%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 40px)">内存</h5>
+        <h5 style="top: 63%; color: rgba(0, 0, 0, 0.8);">1.5 TB 2933MHz DIMM</h5>
+        <h5 style="top: 67%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 60px)">启动磁盘</h5>
+        <h5 style="top: 67%; color: rgba(0, 0, 0, 0.8);">Macintosh HD</h5>
+        <h5 style="top: 71%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 50px)">序列号</h5>
+        <h5 style="top: 71%; color: rgba(0, 0, 0, 0.8);">CCSTDMAC2019</h5>
+        <h5 style="top: 75%; color: rgba(0, 0, 0, 0.7); left: calc(30% - 55px)">macOS</h5>
+        <h5 style="top: 75%; color: rgba(0, 0, 0, 0.8);">Ventura 13.6</h5>
+        <h5
+            style="text-align: center; top: 87.5%; left: 50%; color: rgba(0, 0, 0, 0.6); transform: translate(-50%, -50%); width: 100%; height: auto; ">
+            &trade;和&copy; 1983-2024 Apple Inc.<br>保留一切权利。</h5>
+    </div>
+    <div id="finder" style="width:906px;height:610px;">
+        <div id="win-tool">
+            <div id="exit" onclick='exit(this)'></div>
+            <div id="small" onclick="small(this)"></div>
+            <div id="big" onclick="big(this)"></div>
+        </div>
+            <iframe src="https://web.mc.js.cool/" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div id="lp-bg"
+        style="z-index: -0
+        ; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-repeat: no-repeat;background-size: cover;">
+        <div id="launchpad">
+            <div class="s">
+                <h5>搜索</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 102.png" alt="App Store" onclick="OpenApp(this)" />
+                <h5>App Store</h5>
+            </div>
+            <div class="ct"><img src="./images/safari-14-96x96_2x.png" alt="Safari浏览器" onclick="OpenApp(this)" />
+                <h5>Safari浏览器</h5>
+            </div>
+            <div class="ct"><img src="./images/ApplicationIcon 2.png" alt="邮件" onclick="OpenApp(this)" />
+                <h5>邮件</h5>
+            </div>
+            <div class="ct"><img src="./images/App 2.png" alt="日历" onclick="OpenApp(this)" />
+                <h5>日历</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 103.png" alt="提醒事项" onclick="OpenApp(this)" />
+                <h5>提醒事项</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 139.png" alt="备忘录" onclick="OpenApp(this)" />
+                <h5>备忘录</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 112.png" alt="FaceTime" onclick="OpenApp(this)" />
+                <h5>FaceTime</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 106.png" alt="信息" onclick="OpenApp(this)" />
+                <h5>信息</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 110.png" alt="地图" onclick="OpenApp(this)" />
+                <h5>地图</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 144.png" alt="查找" onclick="OpenApp(this)" />
+                <h5>查找</h5>
+            </div>
+            <div class="ct"><img src="./images/Phone Booth.png" alt="Photo Booth" onclick="OpenApp(this)" />
+                <h5>Photo Booth</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 107.png" alt="照片" onclick="OpenApp(this)" />
+                <h5>照片</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 136.png" alt="预览" onclick="OpenApp(this)" />
+                <h5>预览</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 145.png" alt="音乐" onclick="OpenApp(this)" />
+                <h5>MC</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 133.png" alt="播客" onclick="OpenApp(this)" />
+                <h5>播客</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 132.png" alt="视频" onclick="OpenApp(this)" />
+                <h5>植物大战僵尸</h5>
+            </div>
+            <div class="ct"><img src="./images/atmd9-35j8o.png" alt="语音备忘录" onclick="OpenApp(this)" />
+                <h5>语音备忘录</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 131.png" alt="股市" onclick="OpenApp(this)" />
+                <h5>股市</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 141.png" alt="图书" onclick="OpenApp(this)" />
+                <h5>图书</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIconLoc 2.png" alt="词典" onclick="OpenApp(this)" />
+                <h5>词典</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 105.png" alt="计算器" onclick="OpenApp(this)" />
+                <h5>计算器</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 137.png" alt="家庭" onclick="OpenApp(this)" />
+                <h5>家庭</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIconSiri 2.png" alt="Siri" onclick="OpenApp(this)" />
+                <h5>Siri</h5>
+            </div>
+            <div class="ct"><img src="./images/AppIcon 109.png" alt="调度中心" onclick="OpenApp(this)" />
+                <h5>调度中心</h5>
+            </div>
+            <div class="ct"><img src="./images/SystemPrefApp 2.png" alt="系统设置" onclick="OpenApp(this)" />
+                <h5>系统设置</h5>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function gomc() {
+  
+location.href = "desktop.html";
+
+}
+        function $$(id) {
+            return document.getElementById(id)
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = document.querySelectorAll("#dock img")
+            const appName = document.createElement("div")
+            appName.id = "app-name"
+            document.body.appendChild(appName)
+
+            icons.forEach(icon => {
+                icon.addEventListener("mouseover", function (event) {
+                    const appNameText = event.target.alt
+                    const iconRect = event.target.getBoundingClientRect()
+                    appName.textContent = appNameText
+                    appName.style.top = `${iconRect.top - appName.offsetHeight}px`
+                    appName.style.left = `${iconRect.left + iconRect.width / 2}px`
+                    appName.style.display = "block"
+                })
+
+                icon.addEventListener("mouseout", function () {
+                    appName.style.display = "none"
+                })
+            })
+        })
+
+        let lp_status = false
+        let fd_status = false
+        let menu = false
+        let be_big = false
+
+        var topbar = $$('topbar')
+        var apple_menu = $$("apple-menu")
+        var h4div = $$('h4-div')
+        var hardware = $$("hardware")
+        var fd = $$('finder')
+        var fd2 = $$('finder2')
+        var dock = $$('icns')
+        var body = $$('body')
+
+        function exit(app) {
+            fd.style.opacity = 0
+            fd.style.zIndex = -1
+            fd_status = false
+            fd.style.width = '30%'
+            fd.style.height = '20%'
+        }
+        function small(app) {
+            alert('正在全力开发中！')
+        }
+
+        function big(app) {
+            if (be_big == false) {
+                fd.style.animation = 'BigAnimation 0.3s ease-in-out forwards'
+                be_big = true
+            } else {
+                fd.style.animation = 'BigAniBack 0.3s ease-in-out forwards'
+                bg_big = false
+            }
+        }
+
+        function OpenApp(img) {
+            var altText = img.alt
+            if (altText == 'MC') {
+                if (fd_status == false) {
+                    fd.style.opacity = 1
+                    fd_status = true
+                } else {
+                    return
+                }
+            } else if (altText == '启动台') {
+                if (lp_status == false) {
+                    var lp = $$('launchpad')
+                    var lp_bg = $$('lp-bg')
+                    lp_bg.style.opacity = 1
+                    lp_bg.animation = 'opacityBegin 0.3s ease-in-out forwards'
+                    lp_bg.style.zIndex = 1
+                    topbar.style.animation = 'opacityBack 0.2s ease-in-out forwards'
+                    lp.style.animation = 'LaunchPadBegin 0.3s ease-in-out forwards'
+                    lp_status = true
+                } else {
+                    var lp = $$('launchpad')
+                    var lp_bg = $$('lp-bg')
+                    lp.style.animation = 'LaunchPadBack 0.3s ease-in-out forwards'
+                    lp_bg.animation = 'opacityBack 0.3s ease-in-out forwards'
+                    topbar.style.animation = 'opacityBegin 0.2s ease-in-out forwards'
+                    setTimeout(function () { lp_bg.style.zIndex = 1 }, 100)
+                    lp_status = false
+                }
+            } else {
+                
+            }
+        }
+
+        function Show_AppleMenu() {
+            if (menu == false) {
+                apple_menu.style.opacity = 1
+                apple_menu.style.zIndex = 2
+                h4div.style.opacity = 1
+                menu = true
+            } else {
+                apple_menu.style.opacity = 0
+                apple_menu.style.zIndex = -0.5
+                h4div.style.opacity = 0
+                menu = false
+            }
+        }
+
+        function AboutHardWare() {
+            apple_menu.style.opacity = 0
+            hardware.style.opacity = 1
+        }
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var timeString = hours + ':' + minutes;
+            let dayOfWeek = now.getDay();
+            let days = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+            let dayName = days[dayOfWeek];
+            const options = { month: 'numeric', day: '2-digit' };
+            const date = now.toLocaleDateString('zh-CN', options);
+            document.getElementById('Time').textContent = timeString;
+            document.getElementById('Zhou').textContent = dayName;
+            document.getElementById('Date').textContent = date.replace(/\//g, '月') + '日';
+        }
+
+        setInterval(updateTime, 400);
+
+        updateTime();
+
+        function Sleep() {
+            topbar.style.opacity = 0
+            apple_menu.style.opacity = 0
+            dock.style.opacity = 0
+            body.style.backgroundImage = 'none'
+            body.style.backgroundColor = '#000'
+            document.addEventListener('mousemove', function (e) {
+                topbar.style.opacity = 1
+                apple_menu.style.opacity = 1
+                dock.style.opacity = 1
+                body.style.backgroundImage = 'url(./images/macOS 13 Ventura White.jpg)'
+            })
+        }
+
+
+        function Reset() {
+            setTimeout(function () { dock.style.animation = 'DockBack 0.75s forwards ease-in-out' }, 500)
+            topbar.style.opacity = 0
+            apple_menu.style.opacity = 0
+            setTimeout(function () { body.style.backgroundColor = '#000' }, 1500)
+            setTimeout(function () { window.location = './index.html' }, 3000)
+        }
+
+        function Shutdown() {
+            setTimeout(function () { dock.style.animation = 'DockBack 0.75s forwards ease-in-out' }, 500)
+            topbar.style.opacity = 0
+            apple_menu.style.opacity = 0
+            setTimeout(function () { window.location = 'about:blank' }, 2000)
+        }
+
+        function BackLogon() {
+            setTimeout(function () { dock.style.animation = 'DockBack 0.75s forwards ease-in-out' }, 500)
+            topbar.style.opacity = 0
+            apple_menu.style.opacity = 0
+            setTimeout(function () { window.location = './logon.html' }, 2000)
+        }
+
+        const draggable1 = document.getElementById('hardware')
+        const draggable2 = document.getElementById('finder')
+        let active = false
+        let currentX
+        let currentY
+        let initialX
+        let initialY
+        let xOffset = 0
+        let yOffset = 0
+
+        draggable1.addEventListener('mousedown', function (e) {
+            initialX = e.clientX - xOffset
+            initialY = e.clientY - yOffset
+
+            if (e.target === draggable1) {
+                active = true
+            }
+        })
+
+        draggable2.addEventListener('mousedown', function (e) {
+            initialX = e.clientX - xOffset
+            initialY = e.clientY - yOffset
+
+            if (e.target === draggable2) {
+                active = true
+            }
+        })
+
+        document.addEventListener('mouseup', function () {
+            active = false
+        })
+
+        document.addEventListener('mousemove', function (e) {
+            if (active) {
+                e.preventDefault()
+                currentX = e.clientX - initialX
+                currentY = e.clientY - initialY
+                xOffset = currentX
+                yOffset = currentY
+
+                setTranslate(currentX, currentY, draggable1)
+            }
+        })
+
+        document.addEventListener('mousemove', function (e) {
+            if (active) {
+                e.preventDefault()
+                currentX = e.clientX - initialX
+                currentY = e.clientY - initialY
+                xOffset = currentX
+                yOffset = currentY
+
+                setTranslate(currentX, currentY, draggable2)
+            }
+        })
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)"
+        }
+
+        function close() {
+            hardware.style.opacity = 0
+            return
+        }
+    </script>
+</body>
+
+</html>

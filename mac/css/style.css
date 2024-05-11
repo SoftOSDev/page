@@ -1,0 +1,388 @@
+body {
+    height: 100vh;
+    font-family: -apple-system, 'PingFangSC-Regular', sans-serif;
+    background-image: url(../images/macOS\ 13\ Ventura\ White.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+h4:hover {
+    cursor: default;
+}
+
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url(../font/苹方黑体-准-简.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes LaunchPadBegin {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+        z-index: 0
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 0
+    }
+}
+
+@keyframes LaunchPadBack {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 0
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+        z-index: 0
+    }
+}
+
+@keyframes DockBegin {
+    0% {
+        transform: translateY(120%);
+    }
+}
+
+@keyframes DockBack {
+    100% {
+        transform: translateY(120%);
+    }
+}
+
+@keyframes opacityBegin {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityBack {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes BigAnimation {
+    100% {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes BigAniBack {
+    0% {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        width: 30%;
+        height: 20%;
+        top: 20%;
+        left: 20%;
+    }
+}
+
+img {
+    width: 75px;
+    height: 75px;
+}
+
+#dock {
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 0.6%;
+}
+
+.icns {
+    display: inline-flex;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding-top: 0.5%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-bottom: 0.9%;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 0.4px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+    animation: DockBegin 0.75s forwards ease-in-out;
+}
+
+#app-name {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-175%);
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2;
+}
+
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2.4%;
+    padding: 0.3% 0.3% 0.3% 0.3%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.6);
+    display: inline-flex;
+    flex-direction: row;
+    z-index: 2;
+}
+
+#topbar #menu {
+    width: 50%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#topbar #status {
+    width: 50%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+#apple-menu {
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4%;
+    left: 0.3%;
+    width: 10%;
+    height: auto;
+    padding: 10px;
+    margin: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    border-radius: 10px;
+    z-index: -0.5;
+}
+
+#apple-menu .h4-div {
+    border-radius: 8px;
+    opacity: 0;
+    width: 100%;
+    margin: 2px;
+    height: auto;
+    z-index: 2;
+}
+
+#apple-menu .h4-div h4 {
+    border-radius: 8px;
+}
+
+#apple-menu .h4-div h4:hover {
+    cursor: default;
+    background-color: #0f78e8;
+    color: #fff;
+}
+
+#hardware {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 530px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 0.4px solid rgba(255, 255, 255, 0.3);
+    color: #000;
+    z-index: 2;
+}
+
+#hardware img {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hardware h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hardware .year {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hardware h5 {
+    position: absolute;
+    left: 30%;
+    margin: 0;
+}
+
+#win-tool {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#exit {
+    border-radius: 50%;
+    background-color: rgb(255, 77, 86);
+    width: 15px;
+    height: 15px;
+    margin-left: 7.5px;
+    margin-top: 7.5px;
+}
+
+#none {
+    border-radius: 50%;
+    background-color: rgba(110, 108, 103, 0.1);
+    width: 15px;
+    height: 15px;
+    margin-left: 7.5px;
+    margin-top: 7.5px;
+}
+
+#small {
+    border-radius: 50%;
+    background-color: #ffb33f;
+    width: 15px;
+    height: 15px;
+    margin-left: 7.5px;
+    margin-top: 7.5px;
+}
+
+#big {
+    border-radius: 50%;
+    background-color: #00c145;
+    width: 15px;
+    height: 15px;
+    margin-left: 7.5px;
+    margin-top: 7.5px;
+}
+
+#finder {
+    opacity: 0;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+#launchpad {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    min-width: 80%;
+    max-width: 100vh;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 10%;
+    padding-top: 3%;
+    align-items: center;
+}
+
+#launchpad .ct {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: auto
+}
+
+#launchpad .ct img {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+}
+
+#launchpad .s {
+    position: absolute;
+    top: 2%;
+    left: calc(50% - 6.25%);
+    width: 12.5%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
+    border: 0.4px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#launchpad .s h5 {
+    margin: 0;
+    font-size: 14px;
+}
+
+h5 {
+    margin-top: 0;
+    margin-top: 6%;
+    font-size: 11.6px;
+    margin-bottom: 0;
+    text-align: center;
+}
