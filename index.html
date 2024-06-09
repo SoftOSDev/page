@@ -51,6 +51,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/jekyll-theme-chirpy.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+    <link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css" rel="stylesheet"/>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
+            type="application/javascript"></script>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/layer/3.5.1/layer.min.js"
+            type="application/javascript"></script>
     <script type="text/javascript">
         class ModeToggle { static get MODE_KEY() { return 'mode'; } static get MODE_ATTR() { return 'data-mode'; } static get DARK_MODE() { return 'dark'; } static get LIGHT_MODE() { return 'light'; } static get ID() { return 'mode-toggle'; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener('change', () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia('(prefers-color-scheme: dark)'); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { document.documentElement.removeAttribute(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage( { direction: ModeToggle.ID, message: this.modeStatus }, '*' ); } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.notify(); } /* flipMode() */ } /* ModeToggle */ const modeToggle = new ModeToggle(); 
     </script>
@@ -171,6 +177,65 @@
         </div>
         <aside aria-label="Scroll to Top"> <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow"> <i class="fas fa-angle-up"></i> </button></aside>
     </div>
+    <div class="hide_box"></div>
+    <div class="shang_box">
+        <a class="shang_close" href="javascript:void(0)" onclick="Add()" title="关闭"><!--<img src="https://static.runoob.com/images/dashang/close.jpg" alt="取消">-->X</a>
+        <div class="shang_tit">
+            <p>赞助一下吧</p>
+        </div>
+        <div class="shang_payimg" style="width: 170px;height: 170px;;">
+            <img src="pay.png" alt="扫码支持" title="扫一扫">
+        </div>
+        <br><br>
+        <div class="pay_explain">孩子马上就生日了，给TA回回血吧<br>球球了</div>
+        <br><br><br>
+        <div class="shang_info">
+            <p>请打开<span id="shang_pay_txt">微信</span>扫一扫</p>
+            <p>Powered by <a href="http://handing.eu.org" target="_blank" title="Handing">Handing</a></p>
+        </div>
+    </div>
+
+    <style>
+        .content{width:80%;margin:10px auto;}
+        .hide_box{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+        .shang_box{width:400px;height:510px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+        .shang_box img{border:none;border-width:0;}
+        .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+        .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+        .shang_close{float:right;display:inline-block;}
+                .shang_logo{display:block;text-align:center;margin:20px auto;}
+        .shang_tit{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('//static.runoob.com/images/dashang/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+        .shang_tit p{color:#a3a3a3;text-align:center;font-size:16px;}
+        .shang_payimg{width:140px;padding:10px;border:6px solid #EA5F00;margin:0 auto;border-radius:3px;height:140px;}
+        .shang_payimg img{display:block;text-align:center;width:140px;height:140px; }
+        .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+        .radiobox{width: 16px;height: 16px;background: url('https://static.runoob.com/images/dashang/radio2.jpg');display: block;float: left;margin-top: 5px;margin-right: 14px;}
+        .checked .radiobox{background:url('https://static.runoob.com/images/dashang/radio1.jpg');}
+        .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:280px;}
+        .shang_payselect .pay_item{display:inline-block;margin-right:10px;float:left;}
+        .shang_info{clear:both;}
+        .shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+    </style>
+
+    <script>
+        $(function(){
+        	$(".pay_item").click(function(){
+        		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+        		var dataid=$(this).attr('data-id');
+        		$(".shang_payimg img").attr("src","https://static.runoob.com/images/dashang/"+dataid+"img.png");
+        		$("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+        	});
+        });
+        function dashangToggle(){
+        	$(".hide_box").fadeToggle();
+        	$(".shang_box").fadeToggle();
+        }
+        window.onload = dashangToggle();
+        function Add(){
+            dashangToggle();
+            layer.alert('谢谢你🙏<br>陌生人');
+        }
+    </script>
     <div id="mask"></div>
     <aside id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="true" data-bs-autohide="false">
         <div class="toast-header"> <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
