@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+
+    <title>Key of Hua's documents</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="shortcut icon" href="https://huaxihao.eu.org/favicon.ico">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500" rel="stylesheet">
+</head>
+<body>
+    <section class="main">
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1> <a href="index.html">输入网页的KEY</a></h1>
+            </div>
+        </div>
+        <div class="w3lhny-register">
+            <div class="iconhny">
+               <span class="fa fa-user-plus"></span>
+             </div>
+            <formaction="#" method="post" class="register-form">
+                <fieldset>
+                    <div class="form">
+                        <div class="form-row">
+                            <span class="fa fa-user"></span>
+                            <script>
+                                const searchParams = new URLSearchParams(window.location.search);
+                                var url=searchParams.get('id');
+                                if(url==null)url='';
+                                document.write("<input type=\"text\" id=\"id\" class=\"form-text\" placeholder=\"文章ID\" value=\""+url+"\" required=\"\">");
+                            </script>
+                            <!-- <input type="text" class="form-text" placeholder="文章ID" value="aaa" required="">  -->
+                        </div>
+                        <div class="form-row">
+                            <span class="fa fa-envelope"></span>
+                            
+                            <input type="text" id="key" class="form-text" placeholder="文章Key" required="">
+                        </div>
+                        <script>
+                            function Key()
+                            {
+                                var x=document.getElementById("id").value;
+                                var y=document.getElementById("key").value;
+                                window.location.replace("../documents/"+x+".html?"+y)
+                            }
+                            </script>
+                        <div class="form-row button-login">
+                            <button class="btn btn-login" onclick="Key()">Let's Go</button>
+                        </div>
+                    </div>
+                </fieldset>
+                </form>
+        </div>
+        <div class="w3l-copyright">
+            <p>© 2021-2024 <a href="http://handing.eu.org">Handing</a>
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
