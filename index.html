@@ -89,6 +89,20 @@
             <div class="row flex-grow-1">
                 <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
                     <div id="post-list" class="flex-grow-1 px-xl-1">
+                        <article class="card-wrapper card"> <a href="personal/documents/okgdbr.html?uS2fJ8vO9cI6oA2mS1lY5sW3wL3kZ9lM3dH6" class="post-preview row g-0 flex-md-row-reverse">
+                            <div class="col-md-12">
+                                <div class="card-body d-flex flex-column">
+                                    <h1 class="card-title my-2 mt-md-0">Chicken WITH Rabbit</h1>
+                                    <div class="card-text content mt-0 mb-3">
+                                        <p> Chicken and rabbit in the same cage is a famous math problem. This program will use the greedy algorithm and enumeration algorithm to write a "chicken and rabbit in the same cage" program in C++ </p>
+                                    </div>
+                                    <div class="post-meta flex-grow-1 d-flex align-items-end">
+                                        <div class="me-auto"> <i class="far fa-calendar fa-fw me-1"></i> <time> Jun 26, 2024 </time> <i class="far fa-folder-open fa-fw me-1"></i> <span class="categories"> Blogging, Tutorial </span></div>
+                                        <div class="pin ms-1"> <i class="fas fa-thumbtack fa-fw"></i> <span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></article>
                         <article class="card-wrapper card"> <a href="vip/" class="post-preview row g-0 flex-md-row-reverse">
                             <div class="col-md-12">
                                 <div class="card-body d-flex flex-column">
@@ -117,7 +131,7 @@
                                 </div>
                             </div>
                         </a></article>
-                        <article class="card-wrapper card"> <a href="https://handing.eu.org/open-source/coderain/" class="post-preview row g-0 flex-md-row-reverse">
+                        <article class="card-wrapper card"> <a href="personal/documents/agdkaw.html?iI0dJ3tH5sU5rS1mS8kA4uC1gJ6vP4vB9mE9" class="post-preview row g-0 flex-md-row-reverse">
                                 <div class="col-md-12">
                                     <div class="card-body d-flex flex-column">
                                         <h1 class="card-title my-2 mt-md-0">Code Rain</h1>
@@ -171,6 +185,15 @@
                 <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
                     <footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 ">
                         <p> © <time>2023</time> <a href="https://handing.eu.org">Handing</a>. <span data-bs-toggle="tooltip" data-bs-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p>
+                        <div class="dropdown">
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" herf="javascript:chanlan();" target="_blank" rel="noopener">Change Language</a>
+                             <div id="myDropdown" class="dropdown-content">
+                                <a href="?lan=zh">中文</a>
+                                <a href="?lan=kr">한국어</a>
+                                <a href="?lan=jp">日本語</a>
+                                <a href="?lan=en">English</a>
+                                <a href="?lan=fr">Français</a>
+                            </div> 
                         <p>Using the <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>.</p>
                     </footer>
                 </div>
@@ -229,8 +252,19 @@
         .shang_info{clear:both;}
         .shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
     </style>
-
+    <script type="text/javascript" id="myhk" src="https://res.zvo.cn/translate/translate.js" key="1717832740129" m="1"></script>
     <script>
+        function chanlan(){
+            
+            document.getElementById("myDropdown").classList.toggle("show");
+
+        }
+        var url = location.search;
+        if(url=="?lan=zh")javascript:translate.changeLanguage('chinese_simplified');
+        if(url=="?lan=kr")javascript:translate.changeLanguage('korean');
+        if(url=="?lan=jp")javascript:translate.changeLanguage('japanese');
+        if(url=="?lan=en")javascript:translate.changeLanguage('english');
+        if(url=="?lan=fr")javascript:translate.changeLanguage('french');
         $(function(){
         	$(".pay_item").click(function(){
         		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
